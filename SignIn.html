@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Login | Portal Sword</title> 
+</head>
+<body>
+<video autoplay muted loop id="myVideo">
+    <source src="Energy Field.mp4" type="video/mp4">
+</video>
+
+	<style type="text/css">
+
+	#text{
+
+		height: 25px;
+		border-radius: 5px;
+		padding: 4px;
+		border: solid thin #aaa;
+		width: 100%;
+	}
+
+	#button{
+
+		padding: 10px;
+		width: 100px;
+		color: white;
+		background-color: lightblue;
+		border: none;
+	}
+
+	#box{
+
+		background-color: grey;
+		margin: auto;
+		width: 300px;
+		padding: 20px;
+	}
+
+    /* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  /* bottom: 0; */
+  top: 50%;
+  left: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  /* width: 100%; */  
+  /* padding: 20px; */
+  transform: translate(-50%, -50%);
+}
+.Title {
+  font-size: 100px;
+  position: fixed;
+  /* bottom: 0; */
+  top: 20%;
+  left: 50%;
+  /*background: rgba(0, 0, 0, 0.5);*/
+  color: #f1f1f1;
+  /* width: 100%; */  
+  /* padding: 20px; */
+  transform: translate(-50%, -50%);
+}
+
+
+	</style>
+    <div class="Title">
+        <p3>Portal Sword</p3>
+    </div>
+<div class="content">
+	<div id="box">
+		
+		<form method="post">
+			<div style="font-size: 20px;margin: 10px;color: white;">Login</div>
+
+			<input id="text" type="text" name="user_name" placeholder="Username" style="color:#888;" onblur="inputBlur(this)"><br><br>
+			<input id="text" type="password" name="password" placeholder="Password" style="color:#888;" onblur="inputBlur(this)"><br><br>
+			<!-- Name: <input id="text" type="text" name="name"><br><br> -->
+
+			<input id="button" type="submit" value="Login"><br><br> 
+
+			Don't have an account? <a href="SignUp.html">SignUp</a><br><br>
+		</form>
+	</div>
+</div>
+
+	</script>
+
+<script> // blurs username signaling that it cannot be changed by user
+function inputBlur(i) {
+    if (i.value == "") { i.value = i.defaultValue; i.style.color = "#888"; }
+}
+</script>
+<script>
+// Get the video
+var video = document.getElementById("myVideo");
+
+// Get the button
+var btn = document.getElementById("myBtn");
+
+// Pause and play the video, and change the button text
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+
+</body>
+</html>
