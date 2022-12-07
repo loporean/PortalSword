@@ -9,6 +9,7 @@ public class StopWatch : MonoBehaviour
     bool stopwatchActive = false;
     public float currentTime;
     public Text currentTimeText;
+    public Text VictoryTimeText;
     GameObject[] enemies;
     // Start is called before the first frame update
 
@@ -26,6 +27,7 @@ public class StopWatch : MonoBehaviour
         if (enemies.Length == 0)
         {
             stopwatchActive = false;
+            
         }
 
         if (stopwatchActive == true)
@@ -33,7 +35,8 @@ public class StopWatch : MonoBehaviour
             currentTime = currentTime + Time.deltaTime;
         }
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
-        currentTimeText.text = time.ToString(@"mm\:ss\:ffff");
+        currentTimeText.text = time.ToString(@"hh\:mm\:ss\:ff");
+        VictoryTimeText.text = currentTimeText.text;
 
     }
 

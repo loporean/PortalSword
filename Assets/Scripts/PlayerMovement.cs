@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CodeMonkey.Utils;
+using CodeMonkey;
+
 
 public enum PlayerState{
     walk,
     attack,
+    roll,
     interact,
     stagger,
     idle
@@ -20,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     public FloatValue currentHealth;
     public Signals playerHealthSignal;
+    private Vector3 slideDir;
+    private float slidespeed;
 
 
     // Start is called before the first frame update
@@ -45,6 +51,17 @@ public class PlayerMovement : MonoBehaviour
         else if (currentState == PlayerState.walk || currentState == PlayerState.idle)
         {
             UpdateAnimationAndMove();
+        }
+        switch(currentState) {
+            case PlayerState.walk:
+                MoveCharacter();
+                AttackCo();
+                UpdateAnimationAndMove();
+                DodgeHandle();
+                break;
+            case PlayerState.roll:
+                StartCoroutine(SlideHandle());
+                break;
         }
         
         //Debug.Log(change);
@@ -102,8 +119,23 @@ public class PlayerMovement : MonoBehaviour
         {
             yield return new WaitForSeconds(knockTime);
             myRigidbody.velocity = Vector2.zero;
-            currentState = PlayerState.idle;
+            currentState = PlayerState.walk;
             myRigidbody.velocity = Vector2.zero;
+        }
+    }
+    private void DodgeHandle(){
+        if(Input.GetMouseButtonDown(1)){
+            currentState = PlayerState.roll;
+            slideDir = (UtilsClass.GetMouseWorldPosition() - transform.position).normalized;
+            slidespeed = 50f;
+        }
+    }
+    private IEnumerator SlideHandle(){
+        transform.position += slideDir * slidespeed * Time.deltaTime;
+        slidespeed -= slidespeed * 10 * Time.deltaTime;
+        if(slidespeed < 5f){
+            yield return new WaitForSeconds(.5f);
+            currentState = PlayerState.walk;
         }
     }
 }

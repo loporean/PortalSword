@@ -3205,7 +3205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d384ed9559c76348a49e5e730aad6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Url: https://www.cs.csub.edu/~sdenney/PS/Login.html
+  Url: https://artemis.cs.csub.edu/~sdenney/PortalSword/login.php
 --- !u!114 &1923054192
 MonoBehaviour:
   m_ObjectHideFlags: 0
