@@ -7,7 +7,7 @@ using System;
 public class StopWatch : MonoBehaviour
 {
     bool stopwatchActive = false;
-    float currentTime;
+    public float currentTime;
     public Text currentTimeText;
     GameObject[] enemies;
     // Start is called before the first frame update

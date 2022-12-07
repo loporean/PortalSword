@@ -244,7 +244,7 @@ MonoBehaviour:
   deathEffect: {fileID: 8101303675585553310, guid: 2f51f74e840835b40a68870b67de23e5, type: 3}
   target: {fileID: 0}
   chaseRadius: 4
-  attackRadius: 1.4
+  attackRadius: 2.56
   homePosition: {fileID: 0}
   anim: {fileID: 7605772815450577299}
   speed: 0

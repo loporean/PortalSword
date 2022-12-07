@@ -77,7 +77,5 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void AttackCo(Vector2 direction) { 
-    
-    }
+   
 }
