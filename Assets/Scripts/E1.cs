@@ -7,6 +7,8 @@ public class E1 : Enemy
 
     private Rigidbody2D myRigidbody;
     public Transform target;
+    //public FloatValue maxHealth;
+    //public float health;
     public float chaseRadius;
     public float attackRadius;
     public Transform homePosition;
@@ -17,9 +19,14 @@ public class E1 : Enemy
     //public Transform player;
     public bool flip;
 
+    // public int health;
+   // private void Start() {
+   //     health = maxHealth.initialValue;
+   // }
     // Start is called before the first frame update
     void Start()
     {
+        
         currentState = EnemyState.idle;
         myRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -92,12 +99,10 @@ public class E1 : Enemy
             }
         }
         else {
-            anim.SetBool("Wakeup", false);
-            //anim.SetFloat("moveX", target.position.x);
-            //anim.SetFloat("moveY", target.position.y);
-            //UpdateAnimation();
-            // anim.SetBool("walking", false);
+            anim.SetBool("Wakeup", false); 
+
         }
+
     }
 
     private void ChangeState(EnemyState newState)
