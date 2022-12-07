@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     public int baseAttack;
     public float moveSpeed;
     
+
     public void Knock(Rigidbody2D myRigidbody, float knockTime)
     {
         StartCoroutine(KnockCo(myRigidbody, knockTime));
