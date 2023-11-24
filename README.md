@@ -1,4 +1,4 @@
-portal Sword: Unity-based ARPG Inspired by Zelda and Death’s Door
+Portal Sword: Unity-based ARPG Inspired by Zelda and Death’s Door
 
 Experience an Action Role-Playing Game (ARPG) project crafted within Unity, drawing inspiration from the captivating essence of iconic titles like Zelda and Death’s Door.
 
